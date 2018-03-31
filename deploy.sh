@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 SAMPLE_COMMAND='`sh deploy.sh debug`'
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 1 ]; then
     echo "Invalid arguments passed"
     echo 'Sample Command :'$SAMPLE_COMMAND
     exit
@@ -15,7 +15,7 @@ then
     exit
 fi
 
-DIR=/opt/ir-receiver-bin
+DIR=/opt/ir-receiver
 S3URL="https://s3-ap-south-1.amazonaws.com/skybot-ir-binaries/${MODE}/build_ir.tar.gz"
 WORKPLACE=/opt/ir-workplace
 DEPLOY_PATH=/opt/bin
@@ -31,7 +31,6 @@ cd $DIR
 sudo supervisorctl stop all
 sudo git reset --hard
 sudo git pull origin
-sudo git pull origin version/$VERSION
 sudo rm -Rf /etc/supervisor/conf.d/*.conf
 sudo cp -Rf $DIR/scripts/etc/supervisor/conf.d/* /etc/supervisor/conf.d/
 sudo rm -Rf $DEPLOY_PATH
