@@ -40,7 +40,6 @@ sudo cp -Rf $DIR/template.conf $DEPLOY_PATH
 sudo chown -Rf 0777 $DEPLOY_PATH
 sudo chmod -Rf +x $DEPLOY_PATH
 sudo rm -Rf $WORKPLACE
-sudo hotspotd stop
 sudo ps aux | grep -i $DEPLOY_PATH/listenLIRC | awk {'print $2'} | sudo xargs kill -9
 sudo ps aux | grep -i $DEPLOY_PATH/listenLIRC | awk {'print $2'} | sudo xargs kill -9
 

@@ -2,7 +2,7 @@
 
 setCrons(){
     crontmp=/tmp/cron.skybot
-    #echo "@reboot /opt/bin/init >>/dev/null 2>&1" >> $crontmp
+    echo "@reboot /opt/ir-receiver/scripts/init.sh >>/dev/null 2>&1" >> $crontmp
 
     sudo crontab $crontmp
     sudo rm $crontmp
