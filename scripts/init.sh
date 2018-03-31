@@ -1,5 +1,10 @@
 #!/bin/bash
 
+rm /tmp/lircd.conf
+
+sudo service lircd stop
+sudo kill -9 $(pidof lircd)
+
 ir_codes_dir=/opt/ir-codes/
 cd $ir_codes_dir
 var=$(ls  -1 *.conf)
