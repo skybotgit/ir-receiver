@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# bakshi related code
 rm /tmp/lircd.conf
 
 sudo service lircd stop
